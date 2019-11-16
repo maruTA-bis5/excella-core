@@ -1,12 +1,11 @@
-name: Java CI
+name: verify
 
-on: [push]
-
+on:
+  push:
+    branches: "*"
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
     - name: ja jp
       run: sudo apt -y install language-pack-ja && sudo update-locale LANG=ja_JP.UTF8
