@@ -23,9 +23,7 @@ jobs:
         key: ${{ hashFiles('pom.xml') }}
     - name: Build with Maven
       run: LANG=ja_JP.UTF8 mvn -B verify --file pom.xml -Dmaven.javadoc.failOnError=false
-    - name: publish assets
-      uses: AButler/upload-release-assets@v1.0
+    - uses: actions/upload-artifact@master
       with:
-        files: target/*.zip
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        release-tag: ${{ github.ref }}
+        name: binary
+        path: target/*.zip
