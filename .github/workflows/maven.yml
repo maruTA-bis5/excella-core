@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: ja jp
+      run: sudo apt -y install language-pack-ja && sudo update-locale LANG=ja_JP.UTF8
     - name: check locale
       run: locale -a
     - uses: actions/checkout@v1
